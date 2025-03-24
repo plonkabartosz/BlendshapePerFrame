@@ -1,0 +1,29 @@
+// ----------------------
+// Author: Bartosz P³onka
+// Year: 2025
+// Source: https://github.com/plonkabartosz/BlendshapePerFrame.git
+// License: CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)
+// ----------------------
+
+// This script simply adds a new shelf content to currently selected shelf.
+// Make sure to add the BlendshapePerFrame.mel file to the Maya scripts folder (documents/maya/year/scripts/) !!!!
+
+global string $path;
+$path = `internalVar -userScriptDir` + "BlendshapePerFrame.mel";
+string $result;
+$result = `whatIs $path`;
+if (`substring $result 1 1` == "S") {
+    $path = `substring $result 18 (size($result))`;
+    
+    string $currentShelf = `shelfTabLayout -q -selectTab ShelfLayout`;
+    shelfButton 
+        -parent $currentShelf
+        -label "Blendshape Per Frame"
+        -annotation "Blendshape Per Frame"
+        -command ("source \"" + $path + "\";\ncreateBlendshapeGUI();")
+        -image1 "bakeAnimation.png";
+}
+else
+{
+    error ("BlendshapePerFrame script was not found in " + `internalVar -userScriptDir` + " folder!");
+}

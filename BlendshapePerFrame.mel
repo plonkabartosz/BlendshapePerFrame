@@ -1,0 +1,119 @@
+// ----------------------
+// Author: Bartosz P³onka
+// Year: 2025
+// Source: https://github.com/plonkabartosz/BlendshapePerFrame.git
+// License: CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)
+// ----------------------
+
+// This script uses two meshes:
+// 1. Animated or simulated mesh,
+// 2. Base mesh without any animation
+//
+// This script duplicates the first mesh every frame on the playback range and merges them into animated blendshapes and add them to the second mesh.
+// Make sure to select an animated/simulated mesh and a base mesh without animation/simulation in the GUI !!!!
+
+global proc blendshapePerFrame(string $animatedMesh, string $baseMesh) {
+    
+    float $minTime = `playbackOptions -q -min`;
+    float $maxTime = `playbackOptions -q -max`;
+    string $meshNames[];
+    string $attributes[];
+    int $i = 0;
+    
+    if ($animatedMesh == "No mesh selected!" || $baseMesh == "No mesh selected!") 
+    {
+        error "Please select animated/simulated mesh and base mesh without animation/simulation!";
+        return;
+    }
+    else
+    {
+        for($i=$minTime; $i<=$maxTime; ++$i)
+        {
+            currentTime $i;
+            string $mesh[] = `duplicate -rr $animatedMesh`;
+            $meshNames[$i] = $mesh[0];
+            $attributes[$i] = "blendShape1." + $mesh[0];
+        }
+        currentTime $minTime;
+        
+        for($i=$minTime; $i<=$maxTime; ++$i)
+        {
+            select -add $meshNames[$i];
+        }
+        select -add $baseMesh;
+        blendShape;
+
+        select -r $baseMesh;
+        select -addFirst blendShape1;
+
+        for($i=$minTime; $i<=$maxTime; ++$i)
+        {
+            setKeyframe $attributes[$i];
+            setAttr $attributes[$i] 0;
+        }
+        for($i=$minTime; $i<=$maxTime; ++$i)
+        {
+            currentTime $i;
+            int $j;
+            for($j=$minTime; $j<=$maxTime; ++$j)
+            {
+                setAttr $attributes[$j] 0;
+                setKeyframe $attributes[$j];
+            }
+            setAttr $attributes[$i] 1;
+            setKeyframe $attributes[$i];
+            
+        }
+        for($i=$minTime; $i<=$maxTime; ++$i)
+        {
+            select -add $meshNames[$i];
+            delete $meshNames[$i];
+        }
+        currentTime $minTime;
+    }
+}
+
+global proc createBlendshapeGUI() {
+    if (`window -exists blendshapeWindow`) deleteUI blendshapeWindow;
+    window -title "Blendshape Per Frame" -resizeToFitChildren true blendshapeWindow;
+    
+    columnLayout -adjustableColumn true mainColumn;
+    
+    global string $animatedMesh = "No mesh selected!";
+    global string $baseMesh = "No mesh selected!";
+    
+    separator -height 10 -style "none";
+    text -label "Select animated/simulated mesh:" -font "boldLabelFont" -align "center" -width 300;
+    separator -height 20 -style "single";
+    
+    rowLayout -numberOfColumns 3 -columnWidth 2 50 row1 ;
+    text -label "";
+    string $selectButtonAnimated = `button -label "Select"`;
+    string $animatedText = `text -label "No mesh selected!" -align "left"`;
+    button -edit -command ("global string $animatedMesh; $animatedMesh = `checkSelection`; text -edit -label $animatedMesh " + $animatedText + ";") $selectButtonAnimated;
+    setParent ..;
+    
+    separator -height 20 -style "single";
+    text -label "Select base mesh without animation/simulation:" -font "boldLabelFont" -align "center" -width 300;
+    separator -height 20 -style "single";
+    
+    rowLayout -numberOfColumns 3 -columnWidth 2 50  row2 ;
+    text -label "";
+    string $selectButtonBase = `button -label "Select"`;
+    string $baseText = `text -label "No mesh selected!" -align "left"`;
+    button -edit -command ("global string $baseMesh; $baseMesh = `checkSelection`; text -edit -label $baseMesh " + $baseText + ";") $selectButtonBase;
+    setParent ..;
+    
+    separator -height 20 -style "single";
+    button -label "Create Blendshapes" -command ("global string $baseMesh; global string $animatedMesh; blendshapePerFrame($animatedMesh, $baseMesh)");
+    separator -height 10 -style "none";
+
+    
+    showWindow blendshapeWindow;
+}
+
+global proc string checkSelection() {
+    string $selectedObjects[] = `ls -sl`;
+    if (size($selectedObjects) == 0 || size($selectedObjects) > 1) { return "No mesh selected!";}
+    else { return $selectedObjects[0]; }
+}
