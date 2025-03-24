@@ -10,7 +10,7 @@ BlendshapePerFrame is a MEL (Maya Embedded Language) script designed to automate
 
 ## Installation
 
-1. **Download the scripts:**
+1. **Download this repository, which includes two scripts:**
    - `BlendshapePerFrame.mel`
    - `AddToShelf.mel`
 
@@ -35,13 +35,13 @@ Make sure that you have two meshes in the scene:
 
 1. **Using the script editor:**
    - Open Maya’s Script Editor,
-   - Load the script, by using File -> Open Script…,
+   - Load the script, by using `File -> Open Script…`,
    - Execute the `createBlendshapeGUI()` command, to launch the script GUI.
 
 2. **Using the shelf button:**
    - If you have used `AddToShelf.mel`, simply click the corresponding shelf buton,
    - GUI will appear where you can specify:
-     - **Animated mesh:** Select a mesh that is animated/simulated,
+     - **Animated/Simulated mesh:** Select a mesh that is animated/simulated,
      - **Base mesh:** Select a mesh that has no animation and where blenshapes will be created,
    - Confirm your settings and press `Create Blendshapes` to automatically create the blendshape animation.
 
@@ -50,7 +50,7 @@ Make sure that you have two meshes in the scene:
 - **Review the animation:**
   - Play back your animation in Maya to verify that the blendshape values have been correctly applied per frame,
 - **Adjust if needed:**
-  - Change the playback framerate or the range to control how many blendshapes are beeing created.
+  - Change the playback's framerate or the range to control how many blendshapes will be created.
 
 ## License
 
@@ -58,5 +58,4 @@ Distributed under the [CC0 1.0 Universal](https://creativecommons.org/publicdoma
 
 ## Video Presentation
 
-You can watch the video presentation of this script here:
-https://vimeo.com/1068832595
+You can watch the video presentation of this script here: https://vimeo.com/1068832595
