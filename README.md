@@ -58,4 +58,4 @@ Distributed under the [CC0 1.0 Universal](https://creativecommons.org/publicdoma
 
 ## Video Presentation
 
-You can watch the video presentation of this script here: https://vimeo.com/1068832595
+You can watch the video presentation of this script here: [artstation.com/artwork/6LxJlx](https://www.artstation.com/artwork/6LxJlx)
