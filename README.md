@@ -28,7 +28,7 @@ BlendshapePerFrame is a MEL (Maya Embedded Language) script designed to automate
 
 Make sure that you have two meshes in the scene:
 
-1. **Animated mesh** - this mesh uses cloth simulation or is animated by a deformer node or a skinned skeleton,
+1. **Animated mesh** - this mesh uses cloth simulation, is animated by a deformer, is a skinned mesh,
 2. **Base mesh** - this mesh is not animated and serves as a base for the animated mesh.
 
 ### Running the Script
@@ -39,7 +39,7 @@ Make sure that you have two meshes in the scene:
    - Execute the `createBlendshapeGUI()` command, to launch the script GUI.
 
 2. **Using the shelf button:**
-   - If you have used `AddToShelf.mel`, simply click the corresponding shelf buton,
+   - If you have used `AddToShelf.mel`, simply click the corresponding shelf button,
    - GUI will appear where you can specify:
      - **Animated/Simulated mesh:** Select a mesh that is animated/simulated,
      - **Base mesh:** Select a mesh that has no animation and where blenshapes will be created,
