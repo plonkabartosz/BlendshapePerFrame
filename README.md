@@ -54,7 +54,7 @@ Make sure that you have two meshes in the scene:
 
 ## License
 
-Distributed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
+This project and it's contents are distributed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
 ## Video Presentation
 
