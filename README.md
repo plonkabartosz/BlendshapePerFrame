@@ -24,14 +24,14 @@ BlendshapePerFrame is a MEL (Maya Embedded Language) script designed to automate
 
 ## Usage
 
-### Preparing Your Scene
+### Prepare the scene
 
 Make sure that you have two meshes in the scene:
 
 1. **Animated mesh** - this mesh uses cloth simulation, is animated by a deformer, is a skinned mesh,
 2. **Base mesh** - this mesh is not animated and serves as a base for the animated mesh.
 
-### Running the Script
+### Run the script
 
 1. **Using the script editor:**
    - Open Maya’s Script Editor,
@@ -45,7 +45,7 @@ Make sure that you have two meshes in the scene:
      - **Base mesh:** Select a mesh that has no animation and where blenshapes will be created,
    - Confirm your settings and press `Create Blendshapes` to automatically create the blendshape animation.
 
-### After Execution
+### Review the result or adjust the settings
 
 - **Review the animation:**
   - Play back your animation in Maya to verify that the blendshape values have been correctly applied per frame,
