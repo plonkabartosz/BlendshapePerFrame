@@ -14,7 +14,7 @@ BlendshapePerFrame is a MEL (Maya Embedded Language) script designed to automate
    - `BlendshapePerFrame.mel`
    - `AddToShelf.mel`
 
-2. **Install the scripts:**
+2. **Install the script:**
    - Copy these files into your Maya scripts directory. For example:
      - **Windows:** `C:\Users\<YourUsername>\Documents\maya\<version>\scripts\`
      - **macOS/Linux:** `~/maya/<version>/scripts/`
