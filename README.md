@@ -1,6 +1,6 @@
 # BlendshapePerFrame
 
-BlendshapePerFrame is a MEL (Maya Embedded Language) script designed to automate the process of creating blendshape animations on a per-frame basis in Autodesk Maya. It allows you to automatically keyframe blendshape deformations, saving you time and effort when working with complex cloth simulations, skeletal animations, or any other animations that deform the mesh.
+BlendshapePerFrame is a MEL (Maya Embedded Language) script designed to automate the process of creating per-frame blendshape animations in Autodesk Maya. It allows you to automatically keyframe blendshape deformations, saving you time and effort when working with complex cloth simulations, skeletal animations, or any other animations that deform the mesh.
 
 ## Features
 
