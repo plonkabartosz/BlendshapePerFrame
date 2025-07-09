@@ -21,7 +21,7 @@ if (`substring $result 1 1` == "S") {
         -label "Blendshape Per Frame"
         -annotation "Blendshape Per Frame"
         -command ("source \"" + $path + "\";\ncreateBlendshapeGUI();")
-        -image1 "bakeAnimation.png";
+        -image1 "blendShapePlus.png";
 }
 else
 {
