@@ -2,7 +2,7 @@
 // Author: Bartosz Plonka
 // Year: 2025
 // Source: https://github.com/plonkabartosz/BlendshapePerFrame.git
-// License: CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)
+// License: MIT License (https://opensource.org/license/mit)
 // ----------------------
 
 // This script simply adds a new shelf content to currently selected shelf.
