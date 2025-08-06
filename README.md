@@ -8,21 +8,33 @@ BlendshapePerFrame is a MEL (Maya Embedded Language) script designed to automate
 - **Time-saving workflow:** Eliminates the need to manually set and key each frame,
 - **Shelf integration:** An additional script (`AddToShelf.mel`) is provided to help you add the tool to your Maya shelf for quick access.
 
-## Installation
+## Downloading
 
-1. **Download this repository, which includes two scripts:**
-   - `BlendshapePerFrame.mel`
-   - `AddToShelf.mel`
+You can download this script for free in one of two ways:
 
-2. **Install the script:**
+1. **Download this repository directly from GitHub:**
+   - **As a ZIP file:** Use `Download ZIP` functionality to directly download this repository.
+   - **Using Git:** Clone the repository with the following command:
+
+      ```bash
+      git clone https://github.com/plonkabartosz/BlendshapePerFrame.git
+      ```
+3. **Download this script from the Gumroad:**
+   This script is also freely available on the Gumroad:
+   
+   [BlendshapePerFrame - Free MEL Script for Autodesk Maya](https://lifelikemotion.gumroad.com/)
+
+## Usage
+
+### Install the script
+
+1. **Copy the files:**
    - Copy these files into your Maya scripts directory. For example:
      - **Windows:** `C:\Users\<YourUsername>\Documents\maya\<version>\scripts\`
      - **macOS/Linux:** `~/maya/<version>/scripts/`
 
-3. **Add to shelf (Optional):**
+2. **Add to shelf (Optional):**
    - Drag and drop the `AddToShelf.mel` script inside of Maya to add a convenient shelf button that calls the BlendshapePerFrame functionality. This button allows you to launch the tool directly from Maya’s interface.
-
-## Usage
 
 ### Prepare the scene
 
@@ -36,7 +48,11 @@ Make sure that you have two meshes in the scene:
 1. **Using the script editor:**
    - Open Maya’s Script Editor,
    - Load the script, by using `File -> Open Script…`,
-   - Execute the `createBlendshapeGUI()` command, to launch the script GUI.
+   - Execute the `createBlendshapeGUI()` command,
+   - GUI will appear where you can specify:
+     - **Animated/Simulated mesh:** Select a mesh that is animated/simulated,
+     - **Base mesh:** Select a mesh that has no animation and where blenshapes will be created,
+   - Confirm your settings and press `Create Blendshapes` to automatically create the blendshape animation.
 
 2. **Using the shelf button:**
    - If you have used `AddToShelf.mel`, simply click the corresponding shelf button,
