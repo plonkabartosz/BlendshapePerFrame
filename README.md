@@ -20,9 +20,8 @@ You can download this script for free in one of two ways:
       git clone https://github.com/plonkabartosz/BlendshapePerFrame.git
       ```
 3. **Download this script from the Gumroad:**
-   This script is also freely available on the Gumroad:
    
-   [BlendshapePerFrame - Free MEL Script for Autodesk Maya](https://lifelikemotion.gumroad.com/)
+   - This script is also freely available on the Gumroad: [BlendshapePerFrame - Free MEL Script for Autodesk Maya](https://lifelikemotion.gumroad.com/)
 
 ## Usage
 
